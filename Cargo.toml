@@ -1,0 +1,17 @@
+[package]
+name = "sox"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dan Brown"]
+description = "A quick command utility for managing shell aliases"
+repository = "https://github.com/Brown-Dan/qc"
+license = "MIT"
+keywords = ["alias", "shell", "utility"]
+categories = ["command-line-utilities"]
+
+
+[dependencies]
+clap = { version = "4.5.16", features = ["derive"] }
+serde = { version = "1.0.208", features = ["derive"] }
+dirs = "5.0.1"
+colored = "2.1.0"
