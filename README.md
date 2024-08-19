@@ -1,5 +1,9 @@
 # SOX (WIP) 
 CLI tool to easily manage "Oh My Zsh" aliases. 
+## Installation 
+ 
+- Run `cargo install sox` 
+
 ## Commands 
 
 - `sox add <alias> <command>` - Add an alias. ✅ 
