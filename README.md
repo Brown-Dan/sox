@@ -2,12 +2,12 @@
 CLI tool to easily manage "Oh My Zsh" aliases. 
 ## Commands 
 
-- `qc add <alias> <command>` - Add an alias. ✅ 
+- `sox add <alias> <command>` - Add an alias. ✅ 
 
-- `qc remove <alias>` - Remove an alias. ✅ 
+- `sox remove <alias>` - Remove an alias. ✅ 
 
-- `qc update <alias> <command>` - Update an alias. ✅ 
+- `sox update <alias> <command>` - Update an alias. ✅ 
 
-- `qc rename <alias> <alias>` - Rename an alias. ✅ 
+- `sox rename <alias> <alias>` - Rename an alias. ✅ 
 
-- `qc list` - List all aliases. ✅ 
+- `sox list` - List all aliases. ✅ 
