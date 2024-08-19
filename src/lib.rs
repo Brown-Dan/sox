@@ -94,6 +94,8 @@ pub fn update(alias: Option<String>, command: Option<String>) {
             } else {
                 lines.push(String::from(line));
             }
+        } else {
+            lines.push(String::from(line));
         }
     }
     let mut file = match OpenOptions::new()
@@ -136,6 +138,8 @@ pub fn rename(alias: Option<String>, new_name: Option<String>) {
             } else {
                 lines.push(String::from(line));
             }
+        } else {
+            lines.push(String::from(line));
         }
     }
     let mut file = match OpenOptions::new()
@@ -172,6 +176,8 @@ pub fn remove(alias: Option<String>) {
             if !aliases[0].eq(&alias.clone().unwrap()) {
                 lines.push(String::from(line));
             }
+        } else {
+            lines.push(String::from(line));
         }
     }
     let mut file = match OpenOptions::new()
