@@ -1,6 +1,6 @@
 [package]
 name = "sox"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Dan Brown"]
 description = "A quick command utility for managing shell aliases"
