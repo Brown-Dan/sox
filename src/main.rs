@@ -1,6 +1,6 @@
 use clap::Parser;
 
-use qc::{add, list, remove, rename, search, update};
+use sox::{add, list, remove, rename, search, update};
 
 use crate::models::Command;
 
