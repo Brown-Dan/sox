@@ -1,5 +1,6 @@
 # SOX (WIP) 
 CLI tool to easily manage "Oh My Zsh" aliases. 
+**BACKUP ZSH FILE BEFORE USING**
 ## Installation 
  
 - Run `cargo install sox` 
