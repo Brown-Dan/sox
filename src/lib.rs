@@ -6,13 +6,15 @@ use colored::Colorize;
 
 pub fn list() {
     let mut count: i8 = 0;
-    for line in read_to_string(get_zsh_path()).unwrap().lines() {
-        if line.starts_with("alias") {
-            let alias = line.split_once(" ").unwrap().1.split("=").collect::<Vec<&str>>();
+    read_to_string(get_zsh_path()).expect(&*"Could not read .zshrc file".red().bold()).lines()
+        .filter(|line| line.starts_with("alias"))
+        .for_each(|line| {
+            let alias = line.split_once(" ")
+                .expect(&*"Failed to read aliases".red().bold()).1.split("=")
+                .collect::<Vec<&str>>();
             print_alias(alias[0].to_string(), alias[1].to_string());
             count += 1;
-        }
-    }
+        });
     print_alias_search_result(count)
 }
 
@@ -21,18 +23,18 @@ pub fn search(query: Option<String>) {
         println!("{}", "No query provided".red().bold());
         return;
     }
-
-    let mut count: i8 = 0;
-    for line in read_to_string(get_zsh_path()).unwrap().lines() {
-        if line.starts_with("alias") {
-            let alias = line.split_once(" ").unwrap().1.split("=").collect::<Vec<&str>>();
-            let command = alias[0];
+    let mut count = 0;
+    read_to_string(get_zsh_path()).expect(&*"Could not read .zshrc file".red().bold()).lines()
+        .filter(|line| line.starts_with("alias"))
+        .for_each(|line| {
+            let alias = line.split_once(" ")
+                .expect(&*"Failed to read aliases".red().bold()).1.split("=")
+                .collect::<Vec<&str>>();
             if alias[0].contains(query.clone().unwrap().as_str()) {
-                print_alias(command.to_string(), alias[1].to_string());
-                count += 1;
+                print_alias(alias[0].to_string(), alias[1].to_string());
+                count += 1
             }
-        }
-    }
+        });
     print_alias_search_result(count)
 }
 
@@ -64,7 +66,6 @@ pub fn add(alias: Option<String>, command: Option<String>) {
             }
         }
     }
-
     let result = writeln!(file.unwrap(), "{}", format!("alias {}='{}'", alias.unwrap(), command.unwrap()));
 
     if result.is_err() {
