@@ -16,3 +16,9 @@ CLI tool to easily manage "Oh My Zsh" aliases.
 - `sox rename <alias> <alias>` - Rename an alias. ✅ 
 
 - `sox list` - List all aliases. ✅ 
+
+## TODO 
+- add custom config for zsh path etc
+- add changelog
+- add support for alias functions
+- allow search by command
