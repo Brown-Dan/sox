@@ -22,3 +22,4 @@ CLI tool to easily manage "Oh My Zsh" aliases.
 - add changelog
 - add support for alias functions
 - allow search by command
+- refactor using higher order functions
